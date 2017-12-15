@@ -1,0 +1,8 @@
+require('assets/xenon/css/fonts/linecons/css/linecons.css')
+require('assets/xenon/css/fonts/fontawesome/css/font-awesome.min.css')
+require('assets/xenon/css/bootstrap.css')
+require('assets/xenon/css/xenon-core.css')
+require('assets/xenon/css/xenon-forms.css')
+require('assets/xenon/css/xenon-components.css')
+require('assets/xenon/css/xenon-skins.css')
+require('assets/xenon/css/custom.css')

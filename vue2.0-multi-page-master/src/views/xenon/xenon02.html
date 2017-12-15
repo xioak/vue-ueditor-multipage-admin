@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Xenon Boostrap Admin Panel" />
+	<meta name="author" content="" />
+
+	<title>系统后台管理系统v1.0</title>
+
+	<link rel="stylesheet" href="../static/xenon/css/fonts/linecons/css/linecons.css">
+	<link rel="stylesheet" href="../static/xenon/css/fonts/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/xenon/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/xenon/css/xenon-core.css">
+	<link rel="stylesheet" href="../static/xenon/css/xenon-forms.css">
+	<link rel="stylesheet" href="../static/xenon/css/xenon-components.css">
+	<link rel="stylesheet" href="../static/xenon/css/xenon-skins.css">
+	<link rel="stylesheet" href="../static/xenon/css/custom.css">
+	<link rel="stylesheet" href="../static/xenon/css/manager.css">
+	<!-- <link href="../static/ueditor-utf8/themes/default/css/umeditor.min.css" type="text/css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="../static/umeditor1.2.3/themes/default/css/umeditor.css">
+
+	<script src="../static/xenon/js/jquery-1.11.1.min.js"></script>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+<body class="page-body">
+	<div class="page-container">
+
+		<div id="xenon"></div>
+		<div class="main-content">
+			<div id="xenon-nvg"></div>
+
+			<div class="" id="data-row"  style="display:none">
+				<div class="tabs-vertical-env" >
+							<ul class="nav tabs-vertical mgdata" id="data-tab">
+								<li class="active"><a href="#v-list" data-toggle="tab">
+									<button class="btn btn-blue btn-block">列表</button></a>
+								</li>
+								<li class=""><a  href="#v-add" data-toggle="tab">
+									<button class="btn btn-secondary btn-block">新增</button></a>
+								</li>
+									<li class="" ><a >
+										<button class="btn btn-turquoise btn-block">编辑</button></a>
+									</li>
+									<li class=""><a  href="#v-home" data-toggle="tab">
+										<button class="btn btn-black btn-block">预览</button></a>
+									</li>
+							</ul>
+
+							<div class="tab-content">
+								<div class="tab-pane active" id="v-list">
+									<div class="dataTables_wrapper form-inline dt-bootstrap no-footer"  id="tabdata" >
+										<table class="table table-bordered table-striped dataTable no-footer" id="example-2" role="grid" aria-describedby="example-2_info">
+										<thead>
+											<tr role="row">
+												<th class="no-sorting sorting_asc" rowspan="1" colspan="1" aria-label="" style="width: 31px;">
+													<div class="cbr-replaced"><div class="cbr-input">
+														<input type="checkbox" class="cbr cbr-done"></div>
+														<div class="cbr-state"><span></span></div></div></th>
+												<th class="sorting" tabindex="0" aria-controls="example-2" rowspan="1" colspan="1" aria-label="Student Name: activate to sort column ascending"
+												style="width: 275px;">标题</th>
+												<th class="sorting" tabindex="0" aria-controls="example-2" rowspan="1" colspan="1" aria-label="Average Grade: activate to sort column ascending"
+												style="width: 159px;">时间</th>
+												<th class="sorting" tabindex="0" aria-controls="example-2" rowspan="1" colspan="1" aria-label="t column ascending"
+												style="width: 330px;">其他</th>
+												<th class="sorting" tabindex="0" aria-controls="example-2" rowspan="1" colspan="1" aria-label="Actions: activate "
+												style="width: 215px;">操作</th></tr>
+										</thead>
+
+										<tbody class="middle-align">
+
+										<tr v-for="(item,index) in datas" role="row" class="odd" :class="{even:index%2==0}">
+												<td class="sorting_1">
+													<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done"></div><div class="cbr-state"><span></span></div></div>
+												</td>
+												<td v-text="item.title"></td>
+												<td v-text="item.creatTime"></td>
+												<td v-text="item.date"></td>
+												<td>
+													<!-- v-on:click="editnews(item,index)" -->
+													<a href="#" class="btn btn-secondary btn-sm btn-icon icon-left"  @click="editnews(item,index)">
+														编辑
+													</a>
+													<a href="#" class="btn btn-danger btn-sm btn-icon icon-left" @click="deleteConfirm(item,index)">
+														删除
+													</a>
+													<a href="#" class="btn btn-info btn-sm btn-icon icon-left" @click="preview(item,index)">
+														预览
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table><div class="row"><div class="col-xs-6">
+									<div class="dataTables_info" id="example-2_info" role="status" aria-live="polite">共20条</div></div>
+									<div class="col-xs-6"><div class="dataTables_paginate paging_simple_numbers" id="example-2_paginate">
+											<ul class="pagination"><li class="paginate_button previous disabled" aria-controls="example-2" tabindex="0" id="example-2_previous">
+												<a href="#">上一页</a></li><li class="paginate_button active" aria-controls="example-2" tabindex="0">
+												<a href="#">1</a></li><li class="paginate_button " aria-controls="example-2" tabindex="0">
+												<a href="#">2</a></li><li class="paginate_button " aria-controls="example-2" tabindex="0">
+												<a href="#">3</a></li><li class="paginate_button " aria-controls="example-2" tabindex="0">
+												<a href="#">4</a></li><li class="paginate_button " aria-controls="example-2" tabindex="0">
+												<a href="#">5</a></li><li class="paginate_button " aria-controls="example-2" tabindex="0">
+												<a href="#">6</a></li><li class="paginate_button next" aria-controls="example-2" tabindex="0" id="example-2_next">
+												<a href="#">下一页</a></li></ul>
+										</div></div></div></div>
+								</div>
+								<div class="tab-pane"  id="v-add">
+									<form role="form" class="form-horizontal" v-pre>
+										<div class="form-group">
+											<label class="col-sm-1 control-label" for="field-1">标题</label>
+											<div class="col-sm-11">
+												<input type="text" class="form-control" id="field-1" placeholder="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-1 control-label" for="field-1">内容</label>
+											<div class="col-sm-11">
+												<script id="container" name="content" type="text/plain">
+															 这里写你的初始化内容
+												</script>
+										</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-5"></div>
+											<div class="col-sm-2">
+												<button type="button" class="btn btn-info btn-lg btn-block">提交</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="tab-pane"  id="v-update">
+									<form role="form" class="form-horizontal">
+										<div class="form-group">
+											<label class="col-sm-1 control-label" for="field-2">标题</label>
+											<div class="col-sm-11">
+												<input type="text" class="form-control" id="field-2" placeholder="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-1 control-label" for="field-1">内容</label>
+											<div class="col-sm-11">
+												<script id="container2" name="content" type="text/plain" >
+															 这里写你的初始化内容
+												</script>
+										</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-5"></div>
+											<div class="col-sm-2">
+												<button type="button" class="btn btn-info btn-lg btn-block">更新</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+						</div>
+			</div>
+
+			<footer class="main-footer sticky footer-type-1">
+
+				<div class="footer-inner">
+
+					<!-- Add your copyright text here -->
+					<div class="footer-text">
+					</div>
+					<!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
+					<div class="go-up">
+						<a href="#" rel="go-top">
+							<i class="fa-angle-up"></i>
+						</a>
+					</div>
+				</div>
+			</footer>
+	</div>
+</div>
+
+	<div class="modal fade in" id="modle_alert" aria-hidden="false"  v-bind:style ="{'display':datas.show}">
+	  <div class="modal-dialog" >
+	  <div class="modal-content  xenonalert">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  @click="close()">×</button>
+	      <h4 class="modal-title">{{datas.title}}</h4>
+	    </div>
+
+	    <div class="modal-body">
+	      {{datas.message}}
+	    </div>
+
+	    <div class="modal-footer">
+				<div class="xebtn-box">
+				<div class="xebtn" v-show ="datas.type == 0" >
+					<button type="button" class="btn btn-white btn-block" data-dismiss="modal" @click="close()">{{datas.btnn}}</button>
+				</div>
+	      <div class="xebtn">
+	      	 <button type="button"   class="btn btn-info btn-block" @click="callback" >{{datas.btny}}</button>
+	      </div>
+				</div>
+
+	    </div>
+	  </div>
+	</div>
+	</div>
+
+	<script src="../static/xenon/js/bootstrap.min.js"></script>
+	<script src="../static/xenon/js/TweenMax.min.js"></script>
+	<script src="../static/xenon/js/resizeable.js"></script>
+	<script src="../static/xenon/js/joinable.js"></script>
+	<script src="../static/xenon/js/xenon-api.js"></script>
+	<script src="../static/xenon/js/xenon-toggles.js"></script>
+	<!-- JavaScripts initializations and stuff -->
+	<script src="../static/xenon/js/xenon-custom.js"></script>
+
+	<script src="../static/js/lib/jquery.form.min.js"></script>
+
+	<script type="text/javascript" src="../static/umeditor1.2.3//third-party/template.min.js"></script>
+	<!-- 配置文件 -->
+	<script type="text/javascript" src="../static/umeditor1.2.3/umeditor.config.js"></script>
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="../static/umeditor1.2.3/umeditor.js"></script>
+	<!-- 语言包文件 -->
+	<script type="text/javascript" src="../static/umeditor1.2.3/lang/zh-cn/zh-cn.js"></script>
+
+	<script type="text/javascript">
+					window.um = {};
+				  window.um.add = UM.getEditor('container');
+				  window.um.update = UM.getEditor('container2');
+				  window.um.update3 = UM.getEditor('container3');
+					window.um.all= UM;
+	</script>
+
+</body>
+</html>
