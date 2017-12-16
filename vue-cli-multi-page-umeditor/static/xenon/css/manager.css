@@ -1,0 +1,66 @@
+.tabs-vertical-env .nav.mgdata{
+  width: 100px;
+}
+.tabs-vertical-env .nav.mgdata li > a{
+  padding: 10px 10px;
+}
+.tabs-vertical-env .nav.mgdata li >a > button{
+  padding: 10px 10px;
+  margin-bottom: 0;
+}
+
+.data_mg{
+  padding-left:120px;
+  width:100%;
+}
+
+.data_mg .left{
+  width: 140px;
+  margin-left: -150px;
+  float: left;
+  padding: 10px;
+  background: #cecece;
+}
+
+.data_mg .left button{
+
+  padding: 10px 0;
+
+}
+
+.data_mg .right{
+  float: left;
+  width: 100%;
+
+}
+
+
+.modal .modal-dialog .xenonalert{
+  border-color: #a09999;
+  border-width: 2px;
+  border-radius: 5px;
+  margin-top: 40%;
+
+}
+
+.modal .modal-dialog .xenonalert .modal-body{
+  padding: 40px 0;
+  font-size: 16px;
+  padding-left: 60px;
+}
+
+.xenonalert h4{
+  font-size: 12px;
+}
+.xebtn-box{
+  display: table;
+  margin: 0 auto;
+}
+.xenonalert .xebtn{
+  width: 100px;
+  float: left;
+  margin-right: 30px;
+}
+
+.edui-container * {-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}
+.edui-container *:before,.edui-container *:after {-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}

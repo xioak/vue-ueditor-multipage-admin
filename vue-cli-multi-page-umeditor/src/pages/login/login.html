@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Xenon Boostrap Admin Panel" />
+	<meta name="author" content="" />
+	<title>系统后台管理系统v1.0</title>
+	<link rel="stylesheet" href="../static/xenon/css/fonts/linecons/css/linecons.css">
+	<link rel="stylesheet" href="../static/xenon/css/fonts/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/xenon/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/xenon/css/xenon-core.css">
+	<link rel="stylesheet" href="../static/xenon/css/xenon-forms.css">
+	<link rel="stylesheet" href="../static/xenon/css/xenon-components.css">
+	<link rel="stylesheet" href="../static/xenon/css/xenon-skins.css">
+	<link rel="stylesheet" href="../static/xenon/css/custom.css">
+	<script src="../static/xenon/js/jquery-1.11.1.min.js"></script>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="page-body login-page">
+	<div class="login-container">
+		<div class="row">
+			<div class="col-sm-6">
+				<script type="text/javascript">
+
+				</script>
+
+				<!-- Errors container -->
+				<div class="errors-container">
+
+
+				</div>
+
+				<!-- Add class "fade-in-effect" for login form effect -->
+				<form method="post" role="form" id="login" class="login-form fade-in-effect">
+
+					<div class="login-header">
+						<a href="#" class="logo">
+							<img src="/static/xenon/images/logo@2x.png" alt="" width="80" />
+							<span>登录</span>
+						</a>
+
+						<p>系统用户请在此处登录</p>
+					</div>
+
+					<div v-text="errormessage" style="padding: 15px 10px; font-size: 14px; color: red;"></div>
+
+
+					<div class="form-group">
+						<label class="control-label" for="username">用户名</label>
+						<input type="text" class="form-control input-dark" name="username" id="username"  v-model="logindata.username" autocomplete="off" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="passwd">密码</label>
+						<input type="password" class="form-control input-dark" name="passwd" id="passwd"  v-model="logindata.passwd" autocomplete="off" />
+					</div>
+
+					<div class="form-group">
+						<button type="button" class="btn btn-dark  btn-block text-left" @click="userlogin" style="background:#586073">
+							<i class="fa-lock"></i>
+							Log In
+						</button>
+					</div>
+
+					<div class="login-footer">
+						<a href="#">忘记密码?</a>
+
+						<div class="info-links">
+							<!-- <a href="#">ToS</a> -
+							<a href="#">Privacy Policy</a> -->
+						</div>
+
+					</div>
+
+				</form>
+
+				<!-- External login -->
+				<div class="external-login">
+					<!-- <a href="#" class="facebook">
+						<i class="fa-facebook2"></i>
+						第三方登录
+					</a> -->
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	<!-- Bottom Scripts -->
+	<!-- <script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/TweenMax.min.js"></script>
+	<script src="assets/js/resizeable.js"></script>
+	<script src="assets/js/joinable.js"></script>
+	<script src="assets/js/xenon-api.js"></script>
+	<script src="assets/js/xenon-toggles.js"></script>
+	<script src="assets/js/jquery-validate/jquery.validate.min.js"></script>
+	<script src="assets/js/toastr/toastr.min.js"></script> -->
+	<script src="../static/xenon/js/bootstrap.min.js"></script>
+	<script src="../static/xenon/js/TweenMax.min.js"></script>
+	<script src="../static/xenon/js/resizeable.js"></script>
+	<script src="../static/xenon/js/joinable.js"></script>
+	<script src="../static/xenon/js/xenon-api.js"></script>
+	<script src="../static/xenon/js/xenon-toggles.js"></script>
+	<!-- JavaScripts initializations and stuff -->
+	<script src="../static/xenon/js/xenon-custom.js"></script>
+
+
+</body>
+</html>
