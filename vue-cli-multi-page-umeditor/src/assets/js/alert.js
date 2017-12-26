@@ -21,7 +21,7 @@ const modleAlert = new Vue({
         this.datas.show = 'none';
       },
       operat: function (fn) {
-        fn();
+        // fn();
       },
       open: function (alert,data,param,fn) {
         if (alert === 'alert') {
@@ -47,6 +47,7 @@ const modleAlert = new Vue({
             };
             this.datas.show = 'block';
             this.fnparams = param;
+            this.operat = fn;
         }
       }
     }

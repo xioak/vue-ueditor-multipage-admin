@@ -69,6 +69,7 @@ require('./top.js')
             params.type = 2;
             apis.apiPost('newsAdd',function(res){
               _this.getList();
+              _this.addopen();
               $('#data-tab').find('a').eq(0).tab('show');
             })
           },
@@ -78,10 +79,10 @@ require('./top.js')
           },
 
           deleteConfirm: function (item, index) {
-                alert.alert.open('','',[item,index])
-                alert.alert.operat = function () {
-                table.deleteItem(  alert.alert.fnparams[0],   alert.alert.fnparams[1]);
-              };
+              var _this = this;
+              alert.alert.open('','',[item,index],function(){
+                  _this.deleteItem(  alert.alert.fnparams[0],   alert.alert.fnparams[1]);
+              })
           },
           deleteItem: function (item, index) {
             // newDelete
