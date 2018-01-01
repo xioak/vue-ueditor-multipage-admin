@@ -1100,8 +1100,8 @@ body {
   .sidebar-menu.collapsed .main-menu > li > ul {
     position: absolute;
     background: #2c2e2f;
-    width: 250px;
-    top: 0;
+    width: 132px;
+    top: 2px;
     left: 100%;
     text-align: left;
   }
